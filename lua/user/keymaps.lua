@@ -35,7 +35,7 @@ keymap("n", "<leader>-", "<cmd>hsplit<CR>", opts)
 
 -- Search --
 opts.desc = "Clear search"
-keymap("n", "<leader>n", "<cmd>nohlsearch<CR>", opts)
+keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Buffers --
 opts.desc = "Delete buffer"
@@ -131,3 +131,7 @@ opts.desc = "Toggle deleted lines"
 keymap("n", "<leader>gr", "<cmd>Gitsigns toggle_deleted<CR>", opts)
 opts.desc = "Diff hunk"
 keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
+
+-- noice --
+opts.desc = "Dissmis notifications"
+keymap("n", "<leader>n", "<cmd>Noice dismiss<CR>", opts)
