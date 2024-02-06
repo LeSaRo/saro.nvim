@@ -74,10 +74,11 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Extentions --
 ----------------
 -- nvim-tree --
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+opts.desc = "Toggle file explorer"
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts) -- toggle file explorer
 
 -- lazy --
-keymap("n", "<leader>pl", "<cmd>Lazy<CR>", { desc = "Open lazy.nvim menu" })
+opts.desc = "Open lazy.nvim menu" keymap("n", "<leader>pl", "<cmd>Lazy<CR>", opts)
 
 -- cmp --
 -- Defined in the config file
@@ -92,7 +93,8 @@ keymap("n", "<leader>pl", "<cmd>Lazy<CR>", { desc = "Open lazy.nvim menu" })
 --]]
 
 -- lsp --
-keymap("n", "<leader>pm", "<cmd>Mason<CR>", { desc = "Open Mason menu" })
+opts.desc = "Open Mason menu"
+keymap("n", "<leader>pm", "<cmd>Mason<CR>", opts)
 -- Defined in lsp/handlers.lua --
 --[[
 <gl> Show diagnostic
@@ -114,7 +116,8 @@ keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
 
 
 -- markdown-preview --
-keymap("n", "<leader>M", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+opts.desc = "Toggle Markdown Preview"
+keymap("n", "<leader>M", "<cmd>MarkdownPreviewToggle<CR>", opts)
 
 -- Comments --
 --[[
