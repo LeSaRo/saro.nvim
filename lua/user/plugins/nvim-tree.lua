@@ -30,6 +30,7 @@ return {
                 timeout = 500,
             },
             view = {
+                side = "right",
                 width = 30,
                 relativenumber = false,
             },
