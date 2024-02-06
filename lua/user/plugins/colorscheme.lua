@@ -13,6 +13,15 @@ return {
                 hl.ColorColumn = {
                     bg = "#50557f"
                 }
+                hl.GitSignsAdd = {
+                    fg = "green"
+                }
+                hl.GitSignsChange = {
+                    fg = "darkblue"
+                }
+                hl.GitSignsDelete = {
+                    fg = "red"
+                }
             end
         })
         vim.cmd([[colorscheme tokyonight]])

@@ -11,5 +11,8 @@ return {
                 'NvimTree',
             },
         },
+        sections =  {
+            lualine_x = { 'filetype' },
+        }
     },
 }

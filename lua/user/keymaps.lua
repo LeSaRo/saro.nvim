@@ -31,7 +31,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 opts.desc = "Split verticaly"
 keymap("n", "<leader>|", "<cmd>vsplit<CR>", opts)
 opts.desc = "Split horizontaly"
-keymap("n", "<leader>-", "<cmd>hsplit<CR>", opts)
+keymap("n", "<leader>-", "<cmd>split<CR>", opts)
 
 -- Search --
 opts.desc = "Clear search"
@@ -138,3 +138,9 @@ keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
 -- noice --
 opts.desc = "Dissmis notifications"
 keymap("n", "<leader>n", "<cmd>Noice dismiss<CR>", opts)
+
+-- icon-picker --
+vim.keymap.set("n", "<Leader>ii", "<cmd>IconPickerInsert<cr>", opts)
+vim.keymap.set("n", "<Leader>in", "<cmd>IconPickerNormal<cr>", opts)
+vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+vim.keymap.set("i", "<C-$>", "<cmd>IconPickerInsert<cr>", opts)
