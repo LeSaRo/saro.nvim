@@ -23,23 +23,28 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Buffers --
+opts.desc = "Delete buffer"
+keymap("n", "<leader>bd", "<cmd>bd<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Tabs --
+opts.desc = "New tab"
+keymap("n", "<leader>tn", "<cmd>tabn<CR>", opts)
+opts.desc = "Close tab"
+keymap("n", "<leader>tc", "<cmd>tabc<CR>", opts)
+
 -- Split --
 opts.desc = "Split verticaly"
-keymap("n", "<leader>|", "<cmd>vsplit<CR>", opts)
+keymap("n", "<leader>sk", "<cmd>vsplit<CR>", opts)
 opts.desc = "Split horizontaly"
-keymap("n", "<leader>-", "<cmd>split<CR>", opts)
+keymap("n", "<leader>sl", "<cmd>split<CR>", opts)
 
 -- Search --
 opts.desc = "Clear search"
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
-
--- Buffers --
-opts.desc = "Delete buffer"
-keymap("n", "<leader>bd", "<cmd>bd<CR>", opts)
+keymap("n", "<leader>n", "<cmd>nohlsearch<CR>", opts)
 
 -- Insert --
 -- Mash jk to exit
@@ -137,10 +142,13 @@ keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>", opts)
 
 -- noice --
 opts.desc = "Dissmis notifications"
-keymap("n", "<leader>n", "<cmd>Noice dismiss<CR>", opts)
+keymap("n", "<leader>un", "<cmd>Noice dismiss<CR>", opts)
 
 -- icon-picker --
+opts.desc = "Insert icon (insert)"
 vim.keymap.set("n", "<Leader>ii", "<cmd>IconPickerInsert<cr>", opts)
+opts.desc = "Insert icon (normal)"
 vim.keymap.set("n", "<Leader>in", "<cmd>IconPickerNormal<cr>", opts)
-vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) --> Yank the selected icon into register
+opts.desc = "Yank icon"
+vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
 vim.keymap.set("i", "<C-$>", "<cmd>IconPickerInsert<cr>", opts)

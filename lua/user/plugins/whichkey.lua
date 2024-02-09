@@ -12,6 +12,13 @@ return {
             f = { name = "find" },
             g = { name = "git" },
             p = { name = "plugins" },
+            s = { name = "split" },
+            u = { name = "ui" },
         }, { prefix = "<leader>" })
+        wk.setup({
+            window = {
+                border = "single"
+            }
+        })
     end
 }
