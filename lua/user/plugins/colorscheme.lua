@@ -3,7 +3,7 @@ return {
     config = function()
         require("tokyonight").setup({
             style = "night",
-            -- transparent = true,
+            transparent = vim.g["cstrans"],
             styles = {
                 sidebars = "dark",
                 floats = "dark"

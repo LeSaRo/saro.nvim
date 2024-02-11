@@ -78,6 +78,9 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 ----------------
 -- Extentions --
 ----------------
+-- colorscheme --
+opts.desc = "Toggle transparency"
+keymap("n", "<leader>ut", "<cmd>CSTrans<CR>", opts)
 -- nvim-tree --
 opts.desc = "Toggle file explorer"
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts) -- toggle file explorer

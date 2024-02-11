@@ -47,3 +47,19 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]] -- Don't see the need to count - as part of a word
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- Set colorscheme transparency on the fly
+vim.api.nvim_create_user_command(
+    'CSTrans',
+    function()
+        if vim.g["cstrans"] then
+            vim.g["cstrans"] = false
+        else
+            vim.g["cstrans"] = true
+        end
+        vim.cmd("Lazy reload tokyonight.nvim")
+        vim.cmd("Noice dismiss")
+    end,
+    {}
+)
+vim.g["cstrans"] = false
