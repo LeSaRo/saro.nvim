@@ -11,6 +11,7 @@ return {
             b = { name = "buffers" },
             f = { name = "find" },
             g = { name = "git" },
+            i = { name = "icon" },
             p = { name = "plugins" },
             s = { name = "split" },
             u = { name = "ui" },
