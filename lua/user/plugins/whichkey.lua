@@ -14,6 +14,7 @@ return {
             i = { name = "icon" },
             p = { name = "plugins" },
             s = { name = "split" },
+            t = { name = "tabs" },
             u = { name = "ui" },
         }, { prefix = "<leader>" })
         wk.setup({
