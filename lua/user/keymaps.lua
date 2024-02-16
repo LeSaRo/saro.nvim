@@ -23,6 +23,10 @@ keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Toggle line wrap
+opts.desc = "Toggle line wrap"
+keymap("n", "<leader>uw", "<cmd>WrapToggle<CR>", opts)
+
 -- Buffers --
 opts.desc = "Delete buffer"
 keymap("n", "<leader>bd", "<cmd>bd<CR>", opts)

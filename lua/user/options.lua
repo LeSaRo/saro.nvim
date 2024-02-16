@@ -17,7 +17,8 @@ local options = {
     splitright = true,                       -- force all vertical splits to go to the right of current window
     swapfile = false,                        -- creates a swapfile
     termguicolors = true,                    -- set term gui colors (most terminals support this)
-    timeoutlen = 1000,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+    timeout = true,
+    timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true,                         -- enable persistent undo
     updatetime = 300,                        -- faster completion (4000ms default)
     writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -44,11 +45,12 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]] -- Don't see the need to count - as part of a word
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+-- vim.cmd("set iskeyword+=-") -- Don't see the need to count - as part of a word
+vim.cmd("set formatoptions-=cro") -- TODO: this doesn't seem to work
 
 -- Set colorscheme transparency on the fly
+vim.g["cstrans"] = false
 vim.api.nvim_create_user_command(
     'CSTrans',
     function()
@@ -62,4 +64,17 @@ vim.api.nvim_create_user_command(
     end,
     {}
 )
-vim.g["cstrans"] = false
+
+-- Toggle line wrap
+vim.api.nvim_create_user_command(
+    'WrapToggle',
+    function()
+        if vim.opt["wrap"]:get() then
+            vim.opt["wrap"] = false
+        else
+            print("wrap")
+            vim.opt["wrap"] = true
+        end
+    end,
+    {}
+)
