@@ -5,6 +5,7 @@ local servers = {
 }
 
 return {
+    -- mason
     {
         "williamboman/mason.nvim",
         dependencies = {
@@ -28,6 +29,7 @@ return {
             })
         end,
     },
+    -- mason-lspconfig
     {
         "williamboman/mason-lspconfig",
         config = function()
@@ -37,6 +39,7 @@ return {
             })
         end,
     },
+    -- lspconfig
     {
         "neovim/nvim-lspconfig",
         config = function()
