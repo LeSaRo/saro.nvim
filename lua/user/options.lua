@@ -71,9 +71,10 @@ vim.api.nvim_create_user_command(
     function()
         if vim.opt["wrap"]:get() then
             vim.opt["wrap"] = false
+            print("Line wrap deactivated")
         else
-            print("wrap")
             vim.opt["wrap"] = true
+            print("Line wrap activated")
         end
     end,
     {}
