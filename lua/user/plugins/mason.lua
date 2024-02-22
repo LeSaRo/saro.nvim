@@ -13,6 +13,7 @@ return {
             "neovim/nvim-lspconfig",
             "mfussenegger/nvim-dap",
             "rcarriga/nvim-dap-ui",
+            "theHamsta/nvim-dap-virtual-text"
         },
         config = function()
             require("mason").setup({
@@ -64,4 +65,35 @@ return {
             end
         end
     },
+    -- dap
+    {
+        "mfussenegger/nvim-dap",
+    },
+    {
+        "mfussenegger/nvim-dap-python",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+        ft = "python",
+        config = function()
+            local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+            require("dap-python").setup(path)
+        end
+    },
+    -- dapui
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", },
+        opts = {},
+    },
+    -- neodev
+    {
+        "folke/neodev.nvim",
+        opts = {
+            library = {
+                plugins = { "nvim-dap-ui" },
+                types = true,
+            },
+        },
+    }
 }
