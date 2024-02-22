@@ -117,6 +117,14 @@ keymap("n", "<leader>pm", "<cmd>Mason<CR>", opts)
 <L-g> Show list of diagnostics
 --]]
 
+-- dap --
+opts.desc = "Toggle debugger"
+keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
+opts.desc = "Toggle breakpoint"
+keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts)
+opts.desc = "Continue program"
+keymap("n", "<leader>dc", "<cmd>DapContinue<CR>", opts)
+
 -- telescope --
 -- keymap("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", opts)
 opts.desc = "Find file"
@@ -159,3 +167,21 @@ vim.keymap.set("n", "<Leader>in", "<cmd>IconPickerNormal<cr>", opts)
 opts.desc = "Yank icon"
 vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
 vim.keymap.set("i", "<C-$>", "<cmd>IconPickerInsert<cr>", opts)
+-- todo-comments --
+opts.desc = "Find"
+vim.keymap.set("n", "<Leader>cf", "<cmd>TodoTelescope<cr>", opts)
+opts.desc = "List"
+vim.keymap.set("n", "<Leader>cl", "<cmd>TodoTrouble<cr>", opts)
+-- inserts --
+opts.desc = "Fix"
+vim.keymap.set("n", "<Leader>cif", "aFIX: ", opts)
+opts.desc = "Hack"
+vim.keymap.set("n", "<Leader>cih", "aHACK: ", opts)
+opts.desc = "Note"
+vim.keymap.set("n", "<Leader>cin", "aNOTE: ", opts)
+opts.desc = "Perf"
+vim.keymap.set("n", "<Leader>cip", "aPERF: ", opts)
+opts.desc = "Todo"
+vim.keymap.set("n", "<Leader>cit", "aTODO: ", opts)
+opts.desc = "Warning"
+vim.keymap.set("n", "<Leader>ciw", "aWARNING: ", opts)
