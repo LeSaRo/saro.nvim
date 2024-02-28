@@ -36,7 +36,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Tabs --
 opts.desc = "New tab"
-keymap("n", "<leader>tn", "<cmd>tabn<CR>", opts)
+keymap("n", "<leader>tn", "<cmd>tabnew<CR>", opts)
 opts.desc = "Close tab"
 keymap("n", "<leader>tc", "<cmd>tabc<CR>", opts)
 
