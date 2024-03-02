@@ -116,14 +116,31 @@ keymap("n", "<leader>pm", "<cmd>Mason<CR>", opts)
 <gr> Show list of refereces
 <L-g> Show list of diagnostics
 --]]
+opts.desc = "Show word declaration [LSP]"
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+opts.desc = "Show word definition [LSP]"
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+opts.desc = "Show word description [LSP]"
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+opts.desc = "Show word implementation [LSP]"
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+opts.desc = "Show list of word references [LSP]"
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+opts.desc = "Show diagnostic [LSP]"
+keymap("n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+opts.desc = "Show list of diagnostics [LSP]"
+keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 
 -- dap --
 opts.desc = "Toggle debugger"
 keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
 opts.desc = "Toggle breakpoint"
 keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts)
-opts.desc = "Continue program"
-keymap("n", "<leader>dc", "<cmd>DapContinue<CR>", opts)
+opts.desc = "Debug program"
+keymap("n", "<leader>dd", "<cmd>DapContinue<CR>", opts)
 
 -- telescope --
 -- keymap("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", opts)
