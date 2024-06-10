@@ -52,6 +52,7 @@ keymap("n", "<leader>n", "<cmd>nohlsearch<CR>", opts)
 
 -- Insert --
 -- Mash jk to exit
+keymap("i", "<ESC>", "<Nop>", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
@@ -178,11 +179,11 @@ keymap("n", "<leader>un", "<cmd>Noice dismiss<CR>", opts)
 
 -- icon-picker --
 opts.desc = "Insert icon (insert)"
-vim.keymap.set("n", "<Leader>ii", "<cmd>IconPickerInsert<cr>", opts)
+vim.keymap.set("n", "<Leader>iii", "<cmd>IconPickerInsert<cr>", opts)
 opts.desc = "Insert icon (normal)"
-vim.keymap.set("n", "<Leader>in", "<cmd>IconPickerNormal<cr>", opts)
+vim.keymap.set("n", "<Leader>iin", "<cmd>IconPickerNormal<cr>", opts)
 opts.desc = "Yank icon"
-vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
+vim.keymap.set("n", "<Leader>iiy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
 vim.keymap.set("i", "<C-$>", "<cmd>IconPickerInsert<cr>", opts)
 -- todo-comments --
 opts.desc = "Find"

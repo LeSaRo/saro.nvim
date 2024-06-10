@@ -16,6 +16,7 @@ return {
             u = { name = "ui" },
         }, { prefix = "<leader>" })
         wk.register({ i = "insert"}, {prefix = "<leader>c" })
+        wk.register({ i = "icon"}, {prefix = "<leader>i" })
         wk.setup({
             window = {
                 border = "single"
