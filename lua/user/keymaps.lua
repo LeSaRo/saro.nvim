@@ -50,9 +50,13 @@ keymap("n", "<leader>sl", "<cmd>split<CR>", opts)
 opts.desc = "Clear search"
 keymap("n", "<leader>n", "<cmd>nohlsearch<CR>", opts)
 
+-- Actions --
+-- File
+opts.desc = "Set file as executable"
+keymap("n", "<leader>afx", "<cmd>!chmod +x %<CR>", opts)
+
 -- Insert --
 -- Mash jk to exit
-keymap("i", "<ESC>", "<Nop>", opts)
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
