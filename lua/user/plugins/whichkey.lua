@@ -3,22 +3,25 @@ return {
     event = "VeryLazy",
     config = function ()
         local wk = require("which-key")
-        wk.register({
-            a = { name = "action" },
-            b = { name = "buffers" },
-            c = { name = "comments" },
-            d = { name = "debug" },
-            f = { name = "find" },
-            g = { name = "git" },
-            i = { name = "icon" },
-            p = { name = "plugins" },
-            s = { name = "split" },
-            t = { name = "tabs" },
-            u = { name = "ui" },
+        wk.add({
+            { "<leader>a", group = "action" },
+            { "<leader>af", desc = "file" },
+            { "<leader>b", group = "buffers" },
+            { "<leader>c", group = "comments" },
+            { "<leader>ci", desc = "insert" },
+            { "<leader>d", group = "debug" },
+            { "<leader>f", group = "find" },
+            { "<leader>g", group = "git" },
+            { "<leader>i", group = "icon" },
+            { "<leader>ii", desc = "icon" },
+            { "<leader>p", group = "plugins" },
+            { "<leader>s", group = "split" },
+            { "<leader>t", group = "tabs" },
+            { "<leader>u", group = "ui" },
         }, { prefix = "<leader>" })
-        wk.register({ i = "insert"}, {prefix = "<leader>c" })
-        wk.register({ i = "icon"}, {prefix = "<leader>i" })
-        wk.register({ f = "file"}, {prefix = "<leader>a" })
+        --wk.register({ i = "insert"}, {prefix = "<leader>c" })
+        --wk.register({ i = "icon"}, {prefix = "<leader>i" })
+        --wk.register({ f = "file"}, {prefix = "<leader>a" })
         wk.setup({
             window = {
                 border = "single"
