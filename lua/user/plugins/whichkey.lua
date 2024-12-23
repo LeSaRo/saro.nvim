@@ -23,7 +23,7 @@ return {
         --wk.register({ i = "icon"}, {prefix = "<leader>i" })
         --wk.register({ f = "file"}, {prefix = "<leader>a" })
         wk.setup({
-            window = {
+            win = {
                 border = "single"
             }
         })
