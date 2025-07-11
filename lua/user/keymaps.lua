@@ -170,8 +170,10 @@ keymap("n", "<leader>fm", "<cmd>Telescope media_files<cr>", opts)
 
 
 -- markdown-preview --
-opts.desc = "Toggle Markdown Preview"
-keymap("n", "<leader>M", "<cmd>MarkdownPreviewToggle<CR>", opts)
+opts.desc = "Toggle Preview"
+keymap("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", opts)
+opts.desc = "Toggle Rendering"
+keymap("n", "<leader>mr", "<cmd>RenderMarkdown set<CR>", opts)
 
 -- Comments --
 --[[

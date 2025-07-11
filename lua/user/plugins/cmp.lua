@@ -23,7 +23,6 @@ return {
         opts = function()
             local cmp = require('cmp')
             local luasnip = require('luasnip')
-            local defaults = require("cmp.config.default")()
             local auto_select = true
 
             local check_backspace = function()
@@ -131,6 +130,7 @@ return {
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" },
+                    { name = "render-markdown" },
                 },
                 confirm_opts = {
                     behavior = cmp.ConfirmBehavior.Replace,
