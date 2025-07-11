@@ -33,7 +33,7 @@ return {
 
                 'html',
                 'css',
-                'js',
+                'javascript',
             },
             sync_install = false,
             highlight = {
