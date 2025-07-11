@@ -1,9 +1,8 @@
 return {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    config = function ()
-        local wk = require("which-key")
-        wk.add({
+    opts = function ()
+        require("which-key").add({
             { "<leader>a", group = "action" },
             { "<leader>af", desc = "file" },
             { "<leader>b", group = "buffers" },
@@ -13,7 +12,6 @@ return {
             { "<leader>f", group = "find" },
             { "<leader>g", group = "git" },
             { "<leader>i", group = "icon" },
-            { "<leader>ii", desc = "icon" },
             { "<leader>p", group = "plugins" },
             { "<leader>s", group = "split" },
             { "<leader>t", group = "tabs" },
@@ -22,10 +20,10 @@ return {
         --wk.register({ i = "insert"}, {prefix = "<leader>c" })
         --wk.register({ i = "icon"}, {prefix = "<leader>i" })
         --wk.register({ f = "file"}, {prefix = "<leader>a" })
-        wk.setup({
+        return {
             win = {
                 border = "single"
             }
-        })
+        }
     end
 }

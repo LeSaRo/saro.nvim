@@ -3,24 +3,37 @@ return {
     dependencies = {
         'HiPhish/rainbow-delimiters.nvim',
     },
+    branch = 'master',
+    lazy = 'false',
     build = ':TSUpdate',
-    config = function ()
+    
+    opts = function ()
         -- Tell treesitter where the parsers are
         vim.opt.runtimepath:append("$HOME/.local/share/nvim/treesitter/parsers")
         local configs = require('nvim-treesitter.configs')
 
-        configs.setup({
+        return{
             parser_install_dir = "$HOME/.local/share/nvim/treesitter/parsers",
             ensure_installed = {
                 'c',
-				'c_sharp',
 				'lua',
-				'markdown',
-				'markdown_inline',
 				'python',
+
+                'csv',
+                'ini',
+                'json',
+				'yaml',
+
+                'make',
 				'vim',
 				'vimdoc',
-				'yaml',
+
+				'markdown',
+				'markdown_inline',
+
+                'html',
+                'css',
+                'js',
             },
             sync_install = false,
             highlight = {
@@ -28,6 +41,6 @@ return {
                 additional_vim_regex_highlighting = true,
             },
             indent = { enable = true },
-        })
+        }
     end,
 }

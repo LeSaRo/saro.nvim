@@ -1,11 +1,9 @@
-return {
-"nvim-tree/nvim-tree.lua",
+return{
+    'nvim-tree/nvim-tree.lua',
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
-    config = function()
-        local nvimtree = require("nvim-tree")
-
+    opts = function()
         -- recommended settings from nvim-tree documentation
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
@@ -14,11 +12,11 @@ return {
         vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
         vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
-        nvimtree.setup({
+        return {
             diagnostics = {
                 enable = true,
                 icons = {
-                    hint = "",
+                    hint = "󰌵",
                     info = "",
                     warning = "",
                     error = "",
@@ -58,6 +56,6 @@ return {
             filters = {
                 custom = { ".DS_Store" },
             },
-        })
-  end,
+        }
+    end,
 }

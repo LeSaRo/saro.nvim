@@ -27,13 +27,6 @@ keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 opts.desc = "Toggle line wrap"
 keymap("n", "<leader>uw", "<cmd>WrapToggle<CR>", opts)
 
--- Buffers --
-opts.desc = "Delete buffer"
-keymap("n", "<leader>bd", "<cmd>bd<CR>", opts)
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
 -- Tabs --
 opts.desc = "New tab"
 keymap("n", "<leader>tn", "<cmd>tabnew<CR>", opts)
@@ -87,6 +80,25 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 ----------------
 -- Extentions --
 ----------------
+
+-- barbar --
+-- Close buffer
+keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+-- navigate buffers
+keymap('n', '<A-l>', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', '<A-h>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+keymap('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+keymap('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+-- Buffer pickers
+keymap('n', '<A-p>',   '<Cmd>BufferPick<CR>', opts)
+keymap('n', '<A-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
+-- Sort automatically by...
+opts.desc = "Order by number"
+keymap('n', '<leader>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+opts.desc = "Order by name"
+keymap('n', '<leader>bn', '<Cmd>BufferOrderByName<CR>', opts)
+
 -- colorscheme --
 opts.desc = "Toggle transparency"
 keymap("n", "<leader>ut", "<cmd>CSTrans<CR>", opts)
@@ -183,11 +195,11 @@ keymap("n", "<leader>un", "<cmd>Noice dismiss<CR>", opts)
 
 -- icon-picker --
 opts.desc = "Insert icon (insert)"
-vim.keymap.set("n", "<Leader>iii", "<cmd>IconPickerInsert<cr>", opts)
+vim.keymap.set("n", "<Leader>ii", "<cmd>IconPickerInsert<cr>", opts)
 opts.desc = "Insert icon (normal)"
-vim.keymap.set("n", "<Leader>iin", "<cmd>IconPickerNormal<cr>", opts)
+vim.keymap.set("n", "<Leader>in", "<cmd>IconPickerNormal<cr>", opts)
 opts.desc = "Yank icon"
-vim.keymap.set("n", "<Leader>iiy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
+vim.keymap.set("n", "<Leader>iy", "<cmd>IconPickerYank<cr>", opts) -- Yank the selected icon into register
 vim.keymap.set("i", "<C-$>", "<cmd>IconPickerInsert<cr>", opts)
 -- todo-comments --
 opts.desc = "Find"
