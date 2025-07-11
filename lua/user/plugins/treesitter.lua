@@ -6,13 +6,13 @@ return {
     branch = 'master',
     lazy = 'false',
     build = ':TSUpdate',
-    
-    opts = function ()
+
+    config = function ()
         -- Tell treesitter where the parsers are
         vim.opt.runtimepath:append("$HOME/.local/share/nvim/treesitter/parsers")
         local configs = require('nvim-treesitter.configs')
 
-        return{
+        configs.setup({
             parser_install_dir = "$HOME/.local/share/nvim/treesitter/parsers",
             ensure_installed = {
                 'c',
@@ -41,6 +41,6 @@ return {
                 additional_vim_regex_highlighting = true,
             },
             indent = { enable = true },
-        }
+        })
     end,
 }
