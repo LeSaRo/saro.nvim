@@ -152,12 +152,12 @@ keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 
 -- dap --
-opts.desc = "Toggle debugger"
+--[[ opts.desc = "Toggle debugger"
 keymap("n", "<leader>dt", "<cmd>lua require('dapui').toggle()<CR>", opts)
 opts.desc = "Toggle breakpoint"
 keymap("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", opts)
 opts.desc = "Debug program"
-keymap("n", "<leader>dd", "<cmd>DapContinue<CR>", opts)
+keymap("n", "<leader>dd", "<cmd>DapContinue<CR>", opts) ]]
 
 -- telescope --
 -- keymap("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", opts)
