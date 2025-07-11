@@ -85,8 +85,8 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Close buffer
 keymap('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 -- navigate buffers
-keymap('n', '<A-l>', '<Cmd>BufferPrevious<CR>', opts)
-keymap('n', '<A-h>', '<Cmd>BufferNext<CR>', opts)
+keymap('n', '<A-h>', '<Cmd>BufferPrevious<CR>', opts)
+keymap('n', '<A-l>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
 keymap('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 keymap('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)

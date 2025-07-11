@@ -1,7 +1,7 @@
 return {
     "folke/tokyonight.nvim",
-    opts = function ()
-        return {
+    config = function()
+        require("tokyonight").setup({
             style = "night",
             transparent = vim.g["cstrans"],
             styles = {
@@ -20,6 +20,7 @@ return {
                     fg = "red"
                 }
             end
-        }
-    end,
+        })
+        vim.cmd([[colorscheme tokyonight]])
+    end
 }
