@@ -12,6 +12,8 @@ return {
             { "<leader>f", group = "find" },
             { "<leader>g", group = "git" },
             { "<leader>i", group = "icon" },
+            { "<leader>m", group = "markdown" },
+            { "<leader>n", group = "no-neck-pain" },
             { "<leader>p", group = "plugins" },
             { "<leader>s", group = "split" },
             { "<leader>t", group = "tabs" },

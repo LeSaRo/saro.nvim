@@ -221,3 +221,12 @@ opts.desc = "Todo"
 vim.keymap.set("n", "<Leader>cit", "aTODO: ", opts)
 opts.desc = "Warning"
 vim.keymap.set("n", "<Leader>ciw", "aWARNING: ", opts)
+
+
+-- NoNeckPain --
+opts.desc = "Toggle"
+vim.keymap.set("n", "<Leader>nn", "<cmd>NoNeckPain<cr>", opts)
+opts.desc = "Toggle Left"
+vim.keymap.set("n", "<Leader>nh", "<cmd>NoNeckPainToggleLeftSide<cr>", opts)
+opts.desc = "Toggle Right"
+vim.keymap.set("n", "<Leader>nl", "<cmd>NoNeckPainToggleRightSide<cr>", opts)
