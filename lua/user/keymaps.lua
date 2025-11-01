@@ -7,6 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
+keymap("i", "<ESC>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -52,6 +53,8 @@ keymap("n", "<leader>afx", "<cmd>!chmod +x %<CR>", opts)
 -- Mash jk to exit
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
+keymap("i", "JK", "<ESC>", opts)
+keymap("i", "KJ", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -223,10 +226,10 @@ opts.desc = "Warning"
 vim.keymap.set("n", "<Leader>ciw", "aWARNING: ", opts)
 
 
--- NoNeckPain --
+-- Zen mode (NoNeckPain) --
 opts.desc = "Toggle"
-vim.keymap.set("n", "<Leader>nn", "<cmd>NoNeckPain<cr>", opts)
+vim.keymap.set("n", "<Leader>zn", "<cmd>NoNeckPain<cr>", opts)
 opts.desc = "Toggle Left"
-vim.keymap.set("n", "<Leader>nh", "<cmd>NoNeckPainToggleLeftSide<cr>", opts)
+vim.keymap.set("n", "<Leader>zh", "<cmd>NoNeckPainToggleLeftSide<cr>", opts)
 opts.desc = "Toggle Right"
-vim.keymap.set("n", "<Leader>nl", "<cmd>NoNeckPainToggleRightSide<cr>", opts)
+vim.keymap.set("n", "<Leader>zl", "<cmd>NoNeckPainToggleRightSide<cr>", opts)

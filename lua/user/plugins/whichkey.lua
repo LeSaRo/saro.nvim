@@ -13,11 +13,11 @@ return {
             { "<leader>g", group = "git" },
             { "<leader>i", group = "icon" },
             { "<leader>m", group = "markdown" },
-            { "<leader>n", group = "no-neck-pain" },
             { "<leader>p", group = "plugins" },
             { "<leader>s", group = "split" },
             { "<leader>t", group = "tabs" },
             { "<leader>u", group = "ui" },
+            { "<leader>z", group = "Focus mode" },
         }, { prefix = "<leader>" })
         --wk.register({ i = "insert"}, {prefix = "<leader>c" })
         --wk.register({ i = "icon"}, {prefix = "<leader>i" })
